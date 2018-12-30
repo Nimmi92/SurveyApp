@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Select /> should be an select box 1`] = `
+<ForwardRef>
+  <label>
+    Filter by
+  </label>
+  <select
+    onChange={[MockFunction]}
+  >
+    <option
+      key="0"
+      value="select"
+    >
+      select
+    </option>
+    <option
+      key="1"
+      value="one"
+    >
+      one
+    </option>
+    <option
+      key="2"
+      value="two"
+    >
+      two
+    </option>
+  </select>
+</ForwardRef>
+`;

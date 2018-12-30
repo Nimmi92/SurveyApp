@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Anchor /> should be an anchor tag 1`] = `
+<ForwardRef
+  href="www.google.com"
+  onClick={[MockFunction]}
+>
+  Google
+</ForwardRef>
+`;
