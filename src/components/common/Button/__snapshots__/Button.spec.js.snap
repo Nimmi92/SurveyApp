@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> should be an button element 1`] = `
+<ForwardRef
+  onClick={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "repoName": "react",
+            "userName": "facebook",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+>
+  Get
+</ForwardRef>
+`;

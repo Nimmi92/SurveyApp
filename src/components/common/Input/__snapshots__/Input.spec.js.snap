@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input /> should be an input element with given id 1`] = `
+<div>
+  <ForwardRef
+    htmlFor="repoName"
+  >
+     
+    Repo Name
+     
+  </ForwardRef>
+  <ForwardRef
+    id="repoName"
+    placeholder="Please enter repo name"
+    size="30"
+    type="text"
+  />
+</div>
+`;
