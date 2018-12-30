@@ -7,7 +7,7 @@ const StyledFooter = styled.footer`
   color: #fff;
   font-size: 0.8em;
   text-align: center;
-  padding: 20px 0;
+  padding: 5px 0;
 `
 const Footer = () => {
   return (

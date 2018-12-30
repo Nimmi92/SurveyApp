@@ -1,0 +1,3 @@
+export const REQUEST_SURVEY = 'REQUEST_SURVEY';
+export const RECEIVE_SURVEY = 'RECEIVE_SURVEY';
+export const GOT_ERROR = 'GOT_ERROR';

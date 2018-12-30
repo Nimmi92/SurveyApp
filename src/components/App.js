@@ -4,7 +4,8 @@ import { NavLink, Route, Switch } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import HomePage from "./containers/HomePage";
-import OtherPage from "./containers/OtherPage";
+import SurveyPage from "./containers/SurveyPage";
+import SummaryPage from "./containers/SummaryPage";
 import NotFoundPage from "./NotFoundPage";
 import PropTypes from "prop-types";
 import React from "react";
@@ -24,7 +25,8 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/other" component={OtherPage} />
+          <Route exact path="/survey/:id" component={SurveyPage} />
+          <Route exact path="/summary" component={SummaryPage} />
           <Route component={NotFoundPage} />
         </Switch>
         <Footer />

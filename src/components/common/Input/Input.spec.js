@@ -6,7 +6,6 @@ import toJson from "enzyme-to-json";
 describe('<Input />', () => {
   it('should be an input element with given id', () => {
     const props = {
-      label: 'Repo Name',
       id: 'repoName',
       placeholder: 'Please enter repo name',
       type: 'text',

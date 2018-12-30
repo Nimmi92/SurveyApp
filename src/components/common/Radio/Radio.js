@@ -3,17 +3,25 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { device } from '../../../device/device';
 
+const StyledRadio = styled.div`
+ margin-bottom: 5px;
+ display: inline-block;
+
+ input[type="radio"] {
+
+ }
+`
 
 const Radio = (props) => {
  const {data} = props;
   return (
-    <div>
+    <StyledRadio>
      { data.options && data.options.map((o,i) => {
-      return <div><input type="radio" name={data.name} value={o} /><label>{o}</label></div>
+      return <div key={i}><input type="radio" name={data.name} value={o} onChange={props.onAnswering} /><label>{o}</label></div>
     })
    }
-     
-    </div>
+
+    </StyledRadio>
   );
 };
 
@@ -21,8 +29,8 @@ const Radio = (props) => {
 const { string, array } = PropTypes;
 
 Radio.propTypes = {
-	options: array.isRequired,
-	name: string.isRequired
+	options: array,
+	name: string
 }
 
 export default Radio;

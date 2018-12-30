@@ -1,0 +1,30 @@
+[{
+	"id": 1,
+    "type": "text",
+    "question": "Please enter your name",
+    "options": [],
+    "answer": ""
+},
+{
+	"id": 2,
+	"type": "radio",
+	"name": "Please select your gender",
+    "question": "What2",
+    "options": ["Male", "Female"],
+    "answer": ""
+},
+{
+	"id": 3,
+	"type": "select",
+    "question": "Please select your age group",
+    "options": ["select","0-20", "20-30", "30-50",">50"],
+    "answer": ""
+},
+{
+    "id": 4,
+    "type": "text",
+    "question": "Please enter your country or origin",
+    "options": [],
+    "answer": ""
+}
+]
