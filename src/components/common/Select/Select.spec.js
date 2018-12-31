@@ -11,7 +11,7 @@ describe('<Select />', () => {
       onChange: jest.fn()
     };
 
-    const wrapper = shallow(<Select {...props} />);
+    const wrapper = shallow(<Select {...props} onChange={props.onChange}/>);
     const selectBox = wrapper.find('select');
     expect(selectBox.length).toEqual(1);
     expect(toJson(wrapper)).toMatchSnapshot();

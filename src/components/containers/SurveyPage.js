@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Question from '../Question';
 import Progress from '../common/Progress/Progress';
+import PropTypes from 'prop-types';
 
 const Container = styled.div`
  min-height: 30em;
@@ -94,7 +95,7 @@ class SurveyPage extends React.Component {
       <Container>
         <Progress current={currentPage} total={count} />
 
-        <Question data={this.state.currentQuestion} onAnswering={this.handleAnswer} />
+        <Question data={this.state.currentQuestion} onChange={this.handleAnswer} />
         
         <ButtonWrapper>  
          <Link to={{pathname:currentPage == 1 ? "/" : "/survey/" + prevPage}} className="btn">Previous</Link>
@@ -113,5 +114,16 @@ class SurveyPage extends React.Component {
     );
   }
 };
+
+const { array, object, string } = PropTypes;
+
+SurveyPage.propTypes = {
+  match: object,
+  params: object,
+  id: string,
+  location: object,
+  state: object,
+  questions: array
+}
 
 export default SurveyPage;

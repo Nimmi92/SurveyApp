@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Container = styled.div`
  min-height: 30em;
@@ -8,6 +9,9 @@ const Container = styled.div`
  width: 80%;
  padding: 20px;
  text-align: center;
+`
+const ThanksSection = styled.div`
+ margin-bottom: 20px;
 `
 const StyledQuestion = styled.div`
  margin-bottom: 10px;
@@ -39,13 +43,13 @@ class SummaryPage extends React.Component {
   	
   	return (
     <Container>
-     <div>
+     <ThanksSection>
       <p>Thanks for taking the survery.</p>
       <Link to="/" className="btn">Back to Home</Link>
-     </div>
+     </ThanksSection>
 
      {questions.length > 0 && questions.map((q,i) => {
-     	return <StyledQuestion>
+     	return <StyledQuestion key={i}>
      			<p>{i+1}.{q.question}</p>
      			<p>{answers[i]}</p>
      		   </StyledQuestion>
@@ -58,7 +62,15 @@ class SummaryPage extends React.Component {
     );
   }
 
-};
+}
 
+const { array, object } = PropTypes;
+
+SummaryPage.propTypes = {
+  location: object,
+  state: object,
+  questions: array,
+  answers: array
+}
 
 export default SummaryPage;

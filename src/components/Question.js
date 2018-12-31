@@ -6,7 +6,7 @@ import Radio from './common/Radio/Radio';
 
 const StyledQuestion = styled.div`
  min-height: 5em;
- margin: 20px auto;
+ margin: 30px auto;
  border-bottom: 2px solid #f8f8f8;
  padding: 0 0 20px 0;
  
@@ -19,9 +19,9 @@ const Question = (props) => {
   return (
   	<StyledQuestion>
   		<h4>{data.question}</h4>
-  		{data.type === 'text' && <Input data={data} onAnswering={props.onAnswering} />}
-  		{data.type === 'select' && <Select data={data} onAnswering={props.onAnswering} />}
-  		{data.type === 'radio' && <Radio data={data} onAnswering={props.onAnswering} />}
+  		{data.type === 'text' && <Input {...data} onChange={props.onChange} />}
+  		{data.type === 'select' && <Select  {...data} onChange={props.onChange} />}
+  		{data.type === 'radio' && <Radio  {...data} onChange={props.onChange} />}
   	</StyledQuestion>
   );
 };

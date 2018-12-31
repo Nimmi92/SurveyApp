@@ -1,5 +1,6 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const TotalProgress = styled.div`
  width: 80%;
@@ -30,5 +31,12 @@ const Progress = (props) => {
     </TotalProgress>
   );
 };
+
+const { number } = PropTypes;
+
+Progress.propTypes = {
+  current: number,
+  total: number
+}
 
 export default Progress;

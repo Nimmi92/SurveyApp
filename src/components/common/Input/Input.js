@@ -30,26 +30,25 @@ const StyledInput = styled.input`
   	}
 `
 const Input = (props) => {
-  const {data} = props;
-  console.log(data)
+
   return (
     <div>
-     { data.label && <StyledLabel htmlFor={data.id}> {data.label} </StyledLabel> }
-     <StyledInput type={data.type} placeholder={data.placeholder} id={data.id} size={data.size} onChange={props.onAnswering}/>
+     { props.label && <StyledLabel htmlFor={props.id}> {props.label} </StyledLabel> }
+     <StyledInput type={props.type} placeholder={props.placeholder} id={props.id} size={props.size} onChange={props.onChange}/>
      
     </div>
   );
 };
 
 
-const { string } = PropTypes;
+const { string, func } = PropTypes;
 
 Input.propTypes = {
 	label: string,
-	id: string,
 	type: string,
 	placeholder: string,
-	size: string
+	size: string,
+  onChange: func
 }
 
 export default Input;
