@@ -31,6 +31,7 @@ const StyledInput = styled.input`
 `
 const Input = (props) => {
   const {data} = props;
+  console.log(data)
   return (
     <div>
      { data.label && <StyledLabel htmlFor={data.id}> {data.label} </StyledLabel> }

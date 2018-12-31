@@ -1,5 +1,15 @@
+* {
+	margin: 0;
+	padding: 0;
+}
 body {
   font-family: Segoe UI;
+}
+h1,h2,h3,h4 {
+  margin-bottom: 20px;
+}
+p {
+  margin-bottom: 10px;
 }
 .btn{
     padding: 5px 10px;

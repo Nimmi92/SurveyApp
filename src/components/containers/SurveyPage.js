@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
 import { Link } from 'react-router-dom';
-import * as actions from '../../actions/fetchSurveyActions';
 import Question from '../Question';
 import Progress from '../common/Progress/Progress';
 
@@ -83,45 +80,38 @@ class SurveyPage extends React.Component {
       answered: false
       })
     }
-    const currentPageId = this.state.currentPage;
-    const answeredQuestions = this.state.answers;
-    answeredQuestions[parseInt(currentPageId)-1] = e.target.value;
-    this.setState({answers: answeredQuestions})
+    const getAnswers = this.state.answers;
+    getAnswers.push(e.target.value);
+    this.setState({answers: getAnswers});
   }
 
   render() {
   	const { nextPage, prevPage, currentPage, answers } = this.state;
-  	const count = Array.isArray(this.state.questions) ? this.state.questions.length : this.props.survey.questions.length;
-    const questions = Array.isArray(this.state.questions) ? this.state.questions : this.props.survey.questions;
+    const questions = this.state.questions;
+    const count = questions.length;
 
     return (
       <Container>
-       	<div>
         <Progress current={currentPage} total={count} />
+
         <Question data={this.state.currentQuestion} onAnswering={this.handleAnswer} />
-        <ButtonWrapper>
-        <Link to={{pathname:currentPage == 1 ? "/" : "/survey/" + prevPage}} className="btn">Previous</Link>
-        <Link to={{
-        pathname: currentPage != count ? "/survey/" + nextPage : "/summary",
-        state: {questions: questions, answers: answers}
-        }} className={!this.state.answered ? 'btn disable': 'btn'}>{currentPage != count ? "Next" : "Submit"}</Link>
+        
+        <ButtonWrapper>  
+         <Link to={{pathname:currentPage == 1 ? "/" : "/survey/" + prevPage}} className="btn">Previous</Link>
+        
+         {currentPage != count &&
+          <Link to={{pathname: "/survey/" + nextPage, state: {questions}}} 
+          className={!this.state.answered ? 'btn disable': 'btn'} >Next</Link>
+         }
+         {currentPage == count && 
+          <Link to={{pathname: "/summary",state: {questions, answers: answers}}} 
+          className={!this.state.answered ? 'btn disable': 'btn'} >Submit</Link>
+         }
         </ButtonWrapper>
-        </div>
+
       </Container>
     );
   }
 };
 
-function mapStateToProps(state) {
-  return {
-    survey: state.survey
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(actions, dispatch)
-  };
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(SurveyPage);
+export default SurveyPage;

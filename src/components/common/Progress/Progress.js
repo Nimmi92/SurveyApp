@@ -7,6 +7,12 @@ const TotalProgress = styled.div`
  height: 20px;
  text-align: left;
  margin: 0 auto;
+ text-align: left !important;
+
+ p {
+  text-align: center;
+  margin: 0 0 10px 0;
+ }
 `
 const CurrentProgress = styled.div`
  width: ${props => (props.current/props.total)*100}%;
@@ -16,10 +22,9 @@ const CurrentProgress = styled.div`
  text-align: left;
 `
 const Progress = (props) => {
-  console.log(props)
+
   return (
     <TotalProgress>
-
      <CurrentProgress current={props.current} total={props.total} />
      <p>{`${props.current}/${props.total}`}</p>
     </TotalProgress>

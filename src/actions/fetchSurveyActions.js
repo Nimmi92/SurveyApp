@@ -32,7 +32,7 @@ export function fetchSurvey() {
     dispatch(requestSurvey())
     return fetch('../data/survey.json')
       .then(response => response.json())
-      .then(json => dispatch(receiveSurvey(json)))
+      .then(json => dispatch(receiveSurvey(json.survey)))
       .catch(error => dispatch(handleError(error)))
   }
 }

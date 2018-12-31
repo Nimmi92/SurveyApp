@@ -6,7 +6,7 @@ import Radio from './common/Radio/Radio';
 
 const StyledQuestion = styled.div`
  min-height: 5em;
- margin: 0 auto 20px;
+ margin: 20px auto;
  border-bottom: 2px solid #f8f8f8;
  padding: 0 0 20px 0;
  

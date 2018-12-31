@@ -19,9 +19,6 @@ const Container = styled.div`
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-    	questions: []
-    }
   }
 
   componentDidMount() {
@@ -30,6 +27,7 @@ class HomePage extends React.Component {
 
   render() {
   	const { questions } = this.props.survey
+
   	return (
     <Container>
      <div>
