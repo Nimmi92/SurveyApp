@@ -18,7 +18,7 @@
     	"id": 3,
     	"type": "select",
         "question": "Please select your age group",
-        "options": ["select","0-20", "20-30", "30-50",">50"],
+        "options": ["select","<20", "20-30", "30-50",">50"],
         "answer": ""
     },
     {
@@ -27,6 +27,85 @@
         "question": "Please enter your country or origin",
         "options": [],
         "answer": ""
-    }],
+    },
+    {
+        "id": 5,
+        "type": "select",
+        "question": "Please select your area of expertise",
+        "options": ["select","Front-end", "Back-end", "Full stack","Testing"],
+        "answer": ""
+    },
+    {
+        "id": 6,
+        "type": "select",
+        "question": "Please select your years of work experience",
+        "options": ["select","0-2", "2-5", "5-10",">10"],
+        "answer": ""
+    },
+    {
+        "id": 7,
+        "type": "text",
+        "question": "Please enter your primary skill 1",
+        "options": [],
+        "answer": ""
+    },
+        {
+        "id": 8,
+        "type": "text",
+        "question": "Please enter your primary skill 2",
+        "options": [],
+        "answer": ""
+    },
+        {
+        "id": 9,
+        "type": "text",
+        "question": "Please enter your primary skill 3",
+        "options": [],
+        "answer": ""
+    },
+        {
+        "id": 10,
+        "type": "text",
+        "question": "Please enter your secondary skill 1",
+        "options": [],
+        "answer": ""
+    },
+        {
+        "id": 11,
+        "type": "text",
+        "question": "Please enter your secondary skill 2",
+        "options": [],
+        "answer": ""
+    },
+    {
+        "id": 12,
+        "type": "text",
+        "question": "Please enter your secondary skill 3",
+        "options": [],
+        "answer": ""
+    },
+    {
+        "id": 13,
+        "type": "radio",
+        "name": "relocation",
+        "question": "Are you willing to relocate?",
+        "options": ["Yes", "No"],
+        "answer": ""
+    },
+    {
+        "id": 14,
+        "type": "select",
+        "question": "Please select your notice period",
+        "options": ["select","Less than 1 month", "2 months", "More than 2 months"],
+        "answer": ""
+    },
+    {
+        "id": 15,
+        "type": "text",
+        "question": "Please enter your available start date",
+        "options": [],
+        "answer": ""
+    }
+],
 "answers" : []
 }

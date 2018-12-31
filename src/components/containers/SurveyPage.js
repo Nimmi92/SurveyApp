@@ -52,8 +52,16 @@ class SurveyPage extends React.Component {
   	this.setState({currentQuestion : currentQuestion})
   }
 
+  resetInput() {
+    const inputs = document.querySelectorAll('input[type="text"],input[type="radio"],select')
+    for(let i=0;i<inputs.length;i++) {
+      inputs[i].value = '';
+    }
+  }
+
   componentWillReceiveProps(newProps) {
   	const pageId= newProps.match.params.id;
+    this.resetInput();
   	let pageQuestion;
   	if (Array.isArray(this.state.questions)) {
   	  pageQuestion = this.state.questions[parseInt(pageId)-1];
@@ -82,7 +90,7 @@ class SurveyPage extends React.Component {
       })
     }
     const getAnswers = this.state.answers;
-    getAnswers.push(e.target.value);
+    getAnswers[parseInt(this.state.currentPage)-1] = e.target.value;
     this.setState({answers: getAnswers});
   }
 
@@ -93,7 +101,7 @@ class SurveyPage extends React.Component {
 
     return (
       <Container>
-        <Progress current={currentPage} total={count} />
+        <Progress current={parseInt(currentPage)} total={count} />
 
         <Question data={this.state.currentQuestion} onChange={this.handleAnswer} />
         

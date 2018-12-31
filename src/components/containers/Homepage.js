@@ -57,7 +57,7 @@ function mapDispatchToProps(dispatch) {
 const { func, array, object } = PropTypes;
 
 HomePage.propTypes = {
-  actions: array,
+  actions: object,
   fetchSurvey: func,
   survey: object,
   questions: array

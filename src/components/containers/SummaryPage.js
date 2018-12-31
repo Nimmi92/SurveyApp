@@ -44,7 +44,7 @@ class SummaryPage extends React.Component {
   	return (
     <Container>
      <ThanksSection>
-      <p>Thanks for taking the survery.</p>
+      <p>Thank you for taking the survery.</p>
       <Link to="/" className="btn">Back to Home</Link>
      </ThanksSection>
 
