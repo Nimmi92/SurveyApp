@@ -21,8 +21,6 @@ const Container = styled.div`
     width: 100%;
   }
 `
-const activeStyle = { color: 'tomato' };
-
 const Header = () => {
   return (
     <StyledHeader>

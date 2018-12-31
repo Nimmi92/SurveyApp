@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Question from '../Question';
 import Progress from '../common/Progress/Progress';
+import PropTypes from 'prop-types';
 
 const Container = styled.div`
  min-height: 30em;
@@ -51,8 +52,16 @@ class SurveyPage extends React.Component {
   	this.setState({currentQuestion : currentQuestion})
   }
 
+  resetInput() {
+    const inputs = document.querySelectorAll('input[type="text"],input[type="radio"],select')
+    for(let i=0;i<inputs.length;i++) {
+      inputs[i].value = '';
+    }
+  }
+
   componentWillReceiveProps(newProps) {
   	const pageId= newProps.match.params.id;
+    this.resetInput();
   	let pageQuestion;
   	if (Array.isArray(this.state.questions)) {
   	  pageQuestion = this.state.questions[parseInt(pageId)-1];
@@ -81,7 +90,7 @@ class SurveyPage extends React.Component {
       })
     }
     const getAnswers = this.state.answers;
-    getAnswers.push(e.target.value);
+    getAnswers[parseInt(this.state.currentPage)-1] = e.target.value;
     this.setState({answers: getAnswers});
   }
 
@@ -92,9 +101,9 @@ class SurveyPage extends React.Component {
 
     return (
       <Container>
-        <Progress current={currentPage} total={count} />
+        <Progress current={parseInt(currentPage)} total={count} />
 
-        <Question data={this.state.currentQuestion} onAnswering={this.handleAnswer} />
+        <Question data={this.state.currentQuestion} onChange={this.handleAnswer} />
         
         <ButtonWrapper>  
          <Link to={{pathname:currentPage == 1 ? "/" : "/survey/" + prevPage}} className="btn">Previous</Link>
@@ -113,5 +122,16 @@ class SurveyPage extends React.Component {
     );
   }
 };
+
+const { array, object, string } = PropTypes;
+
+SurveyPage.propTypes = {
+  match: object,
+  params: object,
+  id: string,
+  location: object,
+  state: object,
+  questions: array
+}
 
 export default SurveyPage;

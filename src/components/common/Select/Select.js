@@ -18,13 +18,12 @@ const StyledSelect = styled.div`
 
 `
 const Select = (props) => {
- const {data} = props;
  
   return (
    <StyledSelect>
-  	 {data.label && <label>{data.label}</label>}
-      <select onChange={props.onAnswering}>
-      {data.options.map((o,i) => {
+  	 {props.label && <label>{props.label}</label>}
+      <select onChange={props.onChange}>
+      {props.options.map((o,i) => {
     	return <option value={o} key={i}>{o}</option>
       })}
      </select>
@@ -36,8 +35,8 @@ const Select = (props) => {
 const { string, func, array } = PropTypes;
 
 Select.propTypes = {
-	options: array.isRequired,
-	onAnswering: func,
+	options: array,
+	onChange: func,
 	label: string,
 }
 

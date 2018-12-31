@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { device } from '../device/device';
 
 const StyledFooter = styled.footer`
   background: #000;

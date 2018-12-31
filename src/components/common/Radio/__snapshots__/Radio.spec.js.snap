@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Radio /> should be an radio button 1`] = `
+<ForwardRef>
+  <div
+    key="0"
+  >
+    <input
+      name="gender"
+      onChange={[MockFunction]}
+      type="radio"
+      value="select"
+    />
+    <label>
+      select
+    </label>
+  </div>
+  <div
+    key="1"
+  >
+    <input
+      name="gender"
+      onChange={[MockFunction]}
+      type="radio"
+      value="one"
+    />
+    <label>
+      one
+    </label>
+  </div>
+  <div
+    key="2"
+  >
+    <input
+      name="gender"
+      onChange={[MockFunction]}
+      type="radio"
+      value="two"
+    />
+    <label>
+      two
+    </label>
+  </div>
+</ForwardRef>
+`;

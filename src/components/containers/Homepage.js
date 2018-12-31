@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import * as actions from '../../actions/fetchSurveyActions';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import PropTypes from 'prop-types';
 
 const Container = styled.div`
  min-height: 30em;
@@ -39,7 +40,7 @@ class HomePage extends React.Component {
   	);
   }
 
-};
+}
 
 function mapStateToProps(state) {
   return {
@@ -51,6 +52,15 @@ function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(actions, dispatch)
   };
+}
+
+const { func, array, object } = PropTypes;
+
+HomePage.propTypes = {
+  actions: object,
+  fetchSurvey: func,
+  survey: object,
+  questions: array
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(HomePage);
