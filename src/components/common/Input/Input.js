@@ -19,10 +19,10 @@ const StyledInput = styled.input`
 	background: #fff;
 	margin: 0 0 10px 0;
 	background-color: #fafbfc;
-    border: 1px solid #d1d5da;
-    border-radius: 3px;
-    height: 20px;
-    box-shadow: inset 0 1px 2px rgba(27,31,35,.075);
+  border: 1px solid #d1d5da;
+  border-radius: 3px;
+  height: 20px;
+  box-shadow: inset 0 1px 2px rgba(27,31,35,.075);
 
 	@media ${device.mobileL} {
       display: block;
@@ -31,10 +31,11 @@ const StyledInput = styled.input`
 `
 const Input = (props) => {
   const {data} = props;
+  console.log(data)
   return (
     <div>
      { data.label && <StyledLabel htmlFor={data.id}> {data.label} </StyledLabel> }
-     <StyledInput type={data.type} placeholder={data.placeholder} id={data.id} size={data.size} />
+     <StyledInput type={data.type} placeholder={data.placeholder} id={data.id} size={data.size} onChange={props.onAnswering}/>
      
     </div>
   );
@@ -46,7 +47,7 @@ const { string } = PropTypes;
 Input.propTypes = {
 	label: string,
 	id: string,
-	type: string.isRequired,
+	type: string,
 	placeholder: string,
 	size: string
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
 import styled from 'styled-components';
 import { device } from '../device/device';
 
@@ -9,7 +8,7 @@ const StyledHeader = styled.header`
   color: #fff;
   font-size: 1em;
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
 `
 const Head1 = styled.h1`
   font-size: 1em;
@@ -28,8 +27,7 @@ const Header = () => {
   return (
     <StyledHeader>
        <Container>
-          <NavLink exact to="/" activeStyle={activeStyle}>Home</NavLink>
-          <Head1>React, Redux app</Head1>
+          <Head1>Survey</Head1>
         </Container>
     </StyledHeader>
   );

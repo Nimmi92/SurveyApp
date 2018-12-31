@@ -1,20 +1,56 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import * as actions from '../../actions/fetchSurveyActions';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 
 const Container = styled.div`
- min-height: 50em;
+ min-height: 30em;
  margin: 0 auto;
  width: 80%;
+ padding: 20px;
+
+ & > div {
+  text-align: center;
+ }
 `
 
-const HomePage = () => {
-  return (
+class HomePage extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+  	this.props.actions.fetchSurvey();
+  }
+
+  render() {
+  	const { questions } = this.props.survey
+
+  	return (
     <Container>
-     HomePage <br/>
-     <Link to="/other"> Go to other page </Link>
+     <div>
+     <h2>Welcome to SurveyApp</h2>
+     <h3>Please take a survey</h3>
+     <Link to={{pathname:"/survey/1", state:{questions}}} >Start</Link>
+     </div>
     </Container>
-  );
+  	);
+  }
+
 };
 
-export default HomePage;
+function mapStateToProps(state) {
+  return {
+    survey: state.survey
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(actions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(HomePage);
